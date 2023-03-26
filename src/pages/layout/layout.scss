@@ -20,6 +20,9 @@
     .nav{
       margin-top: 44px;
       ul{
+        li:hover{
+          color: lightblue;
+        }
         li{
           cursor: pointer;
           height: 32px;
@@ -29,6 +32,9 @@
           justify-content: center;
           align-items: center;
           font-size: 16px;
+          &.active{
+            color: lightblue;
+          }
         }
       }
     }
@@ -49,6 +55,7 @@
     }
   }
   .content{
+    padding: 16px;
     flex:1;
   }
 }

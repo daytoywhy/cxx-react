@@ -1,13 +1,21 @@
 import React from "react";
+import { Outlet,useNavigate,useLocation } from 'react-router-dom'
 import './layout.scss'
 import avatar from '@/assets/image/avatar/avatar.jpeg'
 import { GithubOutlined,QqOutlined,MailOutlined } from '@ant-design/icons'
 const Home :React.FC = ()=>{
   const navList = [
-    {label:'首页',value:'home'},
-    {label:'文章',value:'article'},
-    {label:'留言板',value:'messageBoard'},
+    {label:'首页',key:'/home'},
+    {label:'文章',key:'/article'},
+    {label:'留言板',key:'/messageBoard'},
   ]
+  const useRouter = useNavigate()
+  const location = useLocation()
+  console.log(location);
+  
+  const handleClick = (item:any) => {
+    useRouter(item.key)
+  }
   return (
     <div className="layout-container">
       <div className="left">
@@ -18,7 +26,7 @@ const Home :React.FC = ()=>{
           <ul>
           { navList.map(item =>{
             return (
-              <li key={item.value}>{ item.label }</li>
+              <li className={item.key === location.pathname ? 'active' : ''} onClick={()=> handleClick(item) } key={item.key}>{ item.label }</li>
             )
           })}
           </ul>
@@ -40,7 +48,9 @@ const Home :React.FC = ()=>{
           </ul>
         </div>
       </div>
-      <div className="content"></div>
+      <div className="content">
+        <Outlet />
+      </div>
     </div>
   )
 }
