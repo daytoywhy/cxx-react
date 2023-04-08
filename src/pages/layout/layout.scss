@@ -11,11 +11,6 @@
     align-items: center;
     .avatar{
       margin-top: 64px;
-      img{
-      width: 128px;
-      height: 128px;
-      border-radius: 100%;
-      }
     }
     .nav{
       margin-top: 44px;
@@ -50,12 +45,40 @@
           span{
             margin-left: 10px;
           }
+          a{
+            margin-left: 10px;
+            &:hover{
+              cursor: pointer;
+              color: lightblue;
+            }
+          }
         }
       }
     }
   }
   .content{
-    padding: 16px;
+    .container{
+      padding: 16px;
+    }
+    background-color: #f0f2f5;
+    height: 100%;
     flex:1;
+    
   }
 }
+
+.fade-exit {
+  opacity: 0;
+}
+
+.fade-exit-active {
+  opacity: 1;
+}
+
+.fade-enter-active,
+.fade-exit-active {
+  transition: all 300ms;
+}
+
+
+

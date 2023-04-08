@@ -1,2 +1,2 @@
 # cxx-blog
-个人博客，用于记录工作上遇到的问题，分享一些经验
+react+vite+scss

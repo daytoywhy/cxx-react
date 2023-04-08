@@ -36,6 +36,10 @@ const GetRoute = () =>{
           path:'messageBoard',
           element:lazyComponent('messageBoard/index.tsx')
         },
+        {
+          path:'code-rain',
+          element:lazyComponent('code-rain/index.tsx')
+        },
       ]
     }
   ])

@@ -1,0 +1,13 @@
+#container{
+  .header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .title{
+      p{
+        font-size: 20px;
+        font-weight: 700;
+      }
+    }
+  }
+}
